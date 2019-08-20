@@ -1,5 +1,5 @@
-const axios = require("axios");
-const Dev = require("../models/Dev");
+const axios = require('axios');
+const Dev = require('../models/Dev');
 
 module.exports = {
   async index(req, res) {
@@ -14,8 +14,8 @@ module.exports = {
         // notin (não esteja)
         { _id: { $nin: loggedDev.likes } },
         // notin (não esteja)
-        { _id: { $nin: loggedDev.dislikes } }
-      ]
+        { _id: { $nin: loggedDev.dislikes } },
+      ],
     });
 
     return res.json(users);
@@ -40,9 +40,9 @@ module.exports = {
       name,
       user: username,
       bio,
-      avatar
+      avatar,
     });
 
     return res.json(dev);
-  }
+  },
 };
