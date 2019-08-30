@@ -34,13 +34,13 @@ module.exports = {
       `https://api.github.com/users/${username}`
     );
 
-    const { name, bio, avatar_url: avatar } = response.data;
+    const { name, bio, avatar_url } = response.data;
 
     const dev = await Dev.create({
       name,
       user: username,
       bio,
-      avatar,
+      avatar: avatar_url,
     });
 
     return res.json(dev);
